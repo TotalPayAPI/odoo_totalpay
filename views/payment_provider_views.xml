@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_provider_form_totalpay" model="ir.ui.view">
+        <field name="name">payment.provider.form.totalpay</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='provider_credentials']" position="inside">
+                <group invisible="code != 'totalpay'">
+                    <field name="totalpay_merchant_key_live"
+                        invisible="code != 'totalpay'"
+                        required="code == 'totalpay' and state == 'enabled'"/>
+                    <field name="totalpay_merchant_key_test"
+                        invisible="code != 'totalpay'"
+                        required="code == 'totalpay' and state == 'test'"/>
+                    <field name="totalpay_hash_password"
+                           password="True"
+                           invisible="code != 'totalpay'"
+                           required="code == 'totalpay'"/>
+                    <field name="totalpay_hash_mode"
+                           invisible="code != 'totalpay'"
+                           required="code == 'totalpay'"/>
+                    <field name="totalpay_api_url"
+                           invisible="code != 'totalpay'"
+                           required="code == 'totalpay'"/>
+                    <field name="totalpay_callback_endpoint" readonly="1"/>
+                        <div class="text-muted" invisible="code != 'totalpay'">
+                        </div>
+                    <!-- <field name="totalpay_callback_endpoint"
+                           invisible="code != 'totalpay'"
+                           required="code == 'totalpay'"/> -->
+                    <!-- <field name="totalpay_capture_manually"
+                           invisible="code != 'totalpay'"/> -->
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

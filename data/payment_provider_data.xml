@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Standard redirect per https://docs.totalpay.global/docs/guides/checkout/redirects_and_returns:
+        the API response can return redirect_url, redirect_params, and
+        redirect_method (GET or POST). We build the form dynamically from
+        those values instead of hardcoding method="get" with no params.
+    -->
+    <record id="redirect_form_totalpay" model="ir.ui.view">
+        <field name="name">TotalPay Redirect Form</field>
+        <field name="type">qweb</field>
+        <field name="key">payment_totalpay.redirect_form_totalpay</field>
+        <field name="arch" type="xml">
+            <form t-att-action="api_url" t-att-method="redirect_method or 'GET'" target="_top">
+                <t t-foreach="redirect_params or {}" t-as="param_name">
+                    <input type="hidden" t-att-name="param_name" t-att-value="redirect_params[param_name]"/>
+                </t>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_provider_totalpay" model="payment.provider">
+        <field name="name">TotalPay</field>
+        <field name="code">totalpay</field>
+        <field name="state">disabled</field>
+        <field name="is_published" eval="False"/>
+        <field name="redirect_form_view_id" ref="redirect_form_totalpay"/>
+        <field name="image_128" type="base64" file="payment_totalpay/static/description/TotalPay_Logo.svg"/>
+    </record>
+
+    <record id="payment_method_totalpay" model="payment.method">
+        <field name="name">TotalPay</field>
+        <field name="code">totalpay</field>
+        <field name="sequence">100</field>
+        <field name="provider_ids" eval="[(4, ref('payment_provider_totalpay'))]"/>
+        <field name="image" type="base64" file="payment_totalpay/static/description/logo.png"/>
+    </record>
+</odoo>

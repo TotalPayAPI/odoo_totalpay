@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        https://docs.totalpay.global/docs/guides/checkout/callbacks (Delivery and retries):
+        "Each callback is delivered exactly once. There are no automatic
+        retries. If your endpoint is unreachable, returns a non-2xx, or
+        times out, that callback is lost from your perspective."
+    -->
+    <record id="ir_cron_totalpay_reconcile_pending" model="ir.cron">
+        <field name="name">TotalPay: Reconcile Pending Transactions</field>
+        <field name="model_id" ref="payment.model_payment_transaction"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_totalpay_reconcile_pending()</field>
+        <field name="interval_number">5</field>
+        <field name="interval_type">minutes</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>
