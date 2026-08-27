@@ -12,8 +12,8 @@ never receive a callback.
   - Merchant Key (test and/or live)
   - Hashing Password
   - API Base URL
-- A publicly reachable HTTPS domain for your Odoo instance (required for TotalPay's
-  server-to-server webhook to reach you — see [Webhook setup](#webhook-setup) below)
+- A publicly reachable HTTPS domain for your Odoo instance, so TotalPay's server-to-server
+  webhook can reach you (see [Webhook setup](#webhook-setup) below)
 
 ## Installation
 
@@ -39,14 +39,12 @@ you don't need both filled in at once.
 
 ## Webhook setup
 
-`web.base.url` (Settings → Technical → Parameters → System Parameters) must be set to your
-real, public HTTPS domain before the **TotalPay Webhook URL** field will show a usable value.
-TotalPay cannot reach `localhost` — during local development, use a tunnel
-(e.g. [ngrok](https://ngrok.com)) to test webhook delivery.
-
-Once `web.base.url` is correct, copy the value shown in the **TotalPay Webhook URL** field and
-give it to TotalPay (via their merchant admin panel or your account manager) as the
-`notification_url` for the corresponding merchant key (test or live).
+1. Set `web.base.url` (Settings → Technical → Parameters → System Parameters) to your real,
+   public HTTPS domain.
+2. Open **Settings → Payment Providers → TotalPay** and copy the value shown in the
+   **TotalPay Webhook URL** field.
+3. Give that URL to TotalPay (via their merchant admin panel or your account manager) as the
+   `notification_url` for the corresponding merchant key (test or live).
 
 ## Features
 
