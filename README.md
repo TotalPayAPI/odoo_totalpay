@@ -78,4 +78,4 @@ checklist.
 
 ## License
 
-MIT License(https://github.com/TotalPayAPI/odoo-totalpay-payment-provider/blob/main/LICENSE) © TotalPay
+MIT [License](https://github.com/TotalPayAPI/odoo-totalpay-payment-provider/blob/main/LICENSE) © TotalPay
