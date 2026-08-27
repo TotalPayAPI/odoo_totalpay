@@ -210,7 +210,7 @@ class PaymentTransaction(models.Model):
         # 6. Void outcome: void acts on THIS transaction directly (it targets
         #    an authorized-but-not-captured payment).
         if event_type == 'void':
-            if status == 'success' and order_status in ('settled', 'void'):
+            if status == 'success' and order_status == 'settled':
                 if self.state in ('authorized', 'pending', 'draft'):
                     self._set_canceled(_("Authorization voided via TotalPay."))
             return
