@@ -21,12 +21,12 @@ class PaymentProvider(models.Model):
     totalpay_merchant_key_live = fields.Char(
         string="TotalPay Merchant Key - Live",
         help="Merchant key provided by TotalPay for your live account ",
-        required_if_provider='totalpay',
+        # required_if_provider='totalpay',
     )
     totalpay_merchant_key_test = fields.Char(
         string="TotalPay Merchant Key - Test",
         help="Merchant key provided by TotalPay for your test account ",
-        required_if_provider='totalpay',
+        # required_if_provider='totalpay',
     )
     totalpay_hash_password = fields.Char(
         string="TotalPay Hashing Password",
