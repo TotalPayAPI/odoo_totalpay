@@ -25,7 +25,7 @@ Docs: https://docs.totalpay.global/
     """,
     'author': "TotalPay",
     'website': "https://totalpay.global",
-    'depends': ['payment','website_sale'],
+    'depends': ['payment'],
     'data': [
         'views/payment_provider_views.xml',
 
