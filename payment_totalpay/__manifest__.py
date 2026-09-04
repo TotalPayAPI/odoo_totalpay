@@ -1,5 +1,5 @@
 {
-    'name': "TotalPay Payments",
+    'name': "TotalPay",
     'version': '19.0.3.0.0',
     'category': 'Accounting/Payment Providers',
     'sequence': 350,
