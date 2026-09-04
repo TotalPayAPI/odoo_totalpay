@@ -1,16 +1,25 @@
 {
-    'name': "Payment Provider: TotalPay",
+    'name': "TotalPay Payments",
     'version': '19.0.3.0.0',
     'category': 'Accounting/Payment Providers',
     'sequence': 350,
-    'summary': "TotalPay hosted checkout payment provider",
+    'summary': "Accept payments on your Odoo site in a seamless and secure checkout environment.",
     'description': """
-TotalPay Payment Provider
+TotalPay Payment Gateway
 ==========================
-Integrates TotalPay's hosted Checkout (redirect) integration as a payment
-provider in Odoo: session creation, server-to-server webhook confirmation,
-manual capture (DMS mode), refunds, voids, and a reconciliation cron for
-transactions that never receive a callback.
+Accept payments on your Odoo site in a seamless and secure checkout environment.
+
+TotalPay integrates directly into Odoo's payment flow, giving your customers a fast,
+secure hosted checkout experience - backed by real-time payment confirmation, refunds,
+and automatic reconciliation.
+
+Features
+--------
+* Secure hosted checkout redirect
+* Real-time payment confirmation via webhook
+* Support for full and partial refunds
+* Manual capture (DMS / two-step authorization) support
+* Automatic reconciliation for delayed or missed confirmations
 
 Docs: https://docs.totalpay.global/
     """,
