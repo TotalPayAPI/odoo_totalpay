@@ -3,7 +3,7 @@
     'version': '19.0.3.0.0',
     'category': 'Accounting/Payment Providers',
     'sequence': 350,
-    'summary': "Accept payments on your Odoo site in a seamless and secure checkout environment.",
+    'summary': "Accept payments on your Odoo site with TotalPay's secure checkout.",
     'description': """
 TotalPay Payment Gateway
 ==========================
