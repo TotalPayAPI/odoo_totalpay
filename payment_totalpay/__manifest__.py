@@ -4,6 +4,9 @@
     'category': 'Accounting/Payment Providers',
     'sequence': 350,
     'summary': "Accept payments on your Odoo site with TotalPay's secure checkout.",
+    'images': [
+        'static/description/banner.png',
+    ],
     'description': """
 TotalPay Payment Gateway
 ==========================
